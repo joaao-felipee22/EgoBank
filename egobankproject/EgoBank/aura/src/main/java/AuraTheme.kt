@@ -16,6 +16,8 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import tokens.AuraSpacing
+import tokens.LocalAuraSpacing
 import tokens.AuraColors
 import tokens.DarkColorScheme
 import tokens.LightColorScheme
@@ -73,7 +75,10 @@ fun AuraTheme(
         }
     }
 
+    val spacing = AuraSpacing()
+
     CompositionLocalProvider(
+        LocalAuraSpacing provides spacing,
         LocalAuraColors provides customAuraColors
     ) {
         MaterialTheme(
@@ -104,4 +109,8 @@ object AuraTheme {
         @Composable
         @ReadOnlyComposable
         get() = MaterialTheme.shapes
+
+    val spacing: AuraSpacing
+        @Composable
+        get() = LocalAuraSpacing.current
 }

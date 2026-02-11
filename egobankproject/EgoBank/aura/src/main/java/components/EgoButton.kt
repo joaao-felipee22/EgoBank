@@ -51,7 +51,7 @@ fun AuraButton(
     ) {
         Text(
             text = text,
-            style = AuraTheme.typography.labelLarge // Usando a tipografia do seu Design System para labels
+            style = AuraTheme.typography.labelLarge //tipografia do Design System para labels
         )
     }
 }

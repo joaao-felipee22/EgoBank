@@ -12,6 +12,7 @@ activityCompose = "1.10.0"
 appcompat = "1.7.0"
 material = "1.12.0"
 material3 = "1.3.1"
+auraSystem = "1.0.0" # Adicionando: Versão do módulo Aura
 
 # Testes
 junit = "4.13.2"

@@ -19,6 +19,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "My Application"
+rootProject.name = "EgoBank"
 include(":app")
 include(":aura")
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
