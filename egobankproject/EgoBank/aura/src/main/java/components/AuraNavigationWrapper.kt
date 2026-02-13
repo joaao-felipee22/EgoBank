@@ -1,5 +1,7 @@
 package components
 
+import AuraTheme
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.icons.Icons
@@ -10,6 +12,8 @@ import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.tooling.preview.Devices
+import androidx.compose.ui.tooling.preview.Preview
 
 // Dados dos itens de navegação
 data class NavigationItem(
@@ -18,6 +22,7 @@ data class NavigationItem(
     val route: String
 )
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun AuraNavigationWrapper(
     windowWidthSizeClass: WindowWidthSizeClass,
@@ -65,6 +70,40 @@ fun AuraNavigationWrapper(
             }
             // Área de conteúdo ao lado do Rail
             Surface(modifier = Modifier.fillMaxSize(), content = content)
+        }
+    }
+}
+
+@Preview(showBackground = true, name = "Celular (Compact)")
+@Composable
+fun PreviewAuraNavigationMobile() {
+    AuraTheme {
+        AuraNavigationWrapper(
+            windowWidthSizeClass = WindowWidthSizeClass.Compact,
+            selectedRoute = "home",
+            onRouteSelected = {}
+        ) {
+            // Simulação de conteúdo da tela
+            Text("Conteúdo na Visualização de Celular")
+        }
+    }
+}
+
+@Preview(
+    showBackground = true,
+    device = "spec:width=1280dp,height=800dp,dpi=240", // Especificação manual para Tablet
+    name = "Tablet (Expanded)"
+)
+@Composable
+fun PreviewAuraNavigationTablet() {
+    AuraTheme {
+        AuraNavigationWrapper(
+            windowWidthSizeClass = WindowWidthSizeClass.Expanded,
+            selectedRoute = "settings",
+            onRouteSelected = {}
+        ) {
+            // Simulação de conteúdo da tela
+            Text("Conteúdo na Visualização de Tablet")
         }
     }
 }
