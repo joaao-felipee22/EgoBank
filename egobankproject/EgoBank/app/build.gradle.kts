@@ -45,6 +45,8 @@ dependencies {
 
     //Design System
     implementation(project(":aura"))
+    implementation(libs.androidx.compose.material3.windowsizeclass)
+
     // Core Android
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

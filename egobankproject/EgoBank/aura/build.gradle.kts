@@ -42,6 +42,7 @@ android {
 dependencies {
     val bom = libs.androidx.compose.bom
     implementation(platform(bom))
+    implementation(libs.androidx.compose.material3.windowsizeclass)
 
     // Itens básicos do Compose
     implementation(libs.androidx.ui)
