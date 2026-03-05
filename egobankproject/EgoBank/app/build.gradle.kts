@@ -59,6 +59,10 @@ dependencies {
     // Testes Unitários
     testImplementation(libs.junit)
 
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.okhttp.logging) // Opcional, mas muito útil para debug
+
     // Testes de UI (AndroidTest)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
